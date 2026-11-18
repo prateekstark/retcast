@@ -254,6 +254,8 @@ Notice Google TimesFM's 128-step autoregressive patch seam at step `t = 128` whe
   1. **Corpus Saturation Above 2M**: While in-domain scaling improves monotonically (`0.3505 → 0.3476 → 0.3460`), zero-shot MSE peaks at 2M (`0.3706` vs `0.3831` at 5M and `0.3799` at 9M) because 1,345 non-ETT series (~2,400 steps) begins to overfit at 5M–9M capacity. Scaling to larger foundation corpora (e.g., Chronos / LOTSA 100M+ observations) is needed to unlock clean zero-shot scaling laws.
   2. **Benchmark Breadth & Multi-Seed Rigor**: Current results cover 1 seed (`42`) across the 4 ETT datasets (12 tasks) without statistical significance tests or CRPS calibration evaluation; expanding to GIFT-Eval / Monash / TSLib and 3–5 seeds with Diebold-Mariano tests is required for top-tier venue submission.
 
+> **Full Audit & Paper Scaling Blueprint:** See **[docs/PAPER_AND_METHODOLOGY.md](docs/PAPER_AND_METHODOLOGY.md)** for a complete research methodology audit, reviewer stress-test checklist (calendar lag primitive ablation, corpus filtering, multi-seed significance, CRPS calibration, long-context accuracy scaling), and a 5-axis scaling roadmap to target TMLR / NeurIPS / ICML / ICLR.
+
 ---
 
 ## Repository Layout
@@ -274,6 +276,8 @@ retcast/
 │   ├── benchmark_vs_timesfm.py  # Full test-split benchmark, ablations, efficiency & --verify check
 │   ├── make_figures.py        # Generate light & dark PNG plots in assets/
 │   └── export_hf.py           # Export SafeTensors + Model Card and push to Hugging Face Hub
+├── docs/
+│   └── PAPER_AND_METHODOLOGY.md  # Full research methodology audit & 5-axis paper scaling roadmap
 ├── tests/
 │   └── test_retcast.py        # 72 unit tests (RetNet2.0 modes, delta memory, JEPA losses, RevIN, HF roundtrip, TimesFM shapes)
 ├── results/                   # Measured benchmark JSONs (benchmark_vs_timesfm.json, ablations.json, efficiency.json)
