@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+*.pt
+*.ckpt
+*.log
+.pytest_cache/
+dist/
+build/
+*.egg-info/
+data/
+runs/
+export/
+!results/
+!.gitignore

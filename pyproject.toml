@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "retcast"
+version = "0.1.0"
+description = "RetCast: 1-10M RetNet2.0-JEPA Time-Series Forecasters vs Google 200M TimesFM"
+requires-python = ">=3.10"
+dependencies = [
+    "torch>=2.0",
+    "numpy",
+    "pandas",
+    "scikit-learn",
+    "huggingface_hub",
+    "matplotlib",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
+
+[tool.setuptools.packages.find]
+include = ["retcast*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

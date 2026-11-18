@@ -1,0 +1,206 @@
+{
+  "device": "cuda:0",
+  "models": {
+    "timesfm_200m": {
+      "label": "TimesFM-1.0 (200M)",
+      "params": 203568960,
+      "checkpoint_mb": 776.64,
+      "batch_latency_ms": 413.49,
+      "series_per_sec": 38.7,
+      "peak_vram_mb": 796.63
+    },
+    "retcast_2m_jepa": {
+      "label": "RetCast-JEPA 2M",
+      "params": 2052180,
+      "checkpoint_mb": 8.11,
+      "batch_latency_ms": 17.44,
+      "series_per_sec": 917.52,
+      "peak_vram_mb": 22.0
+    },
+    "retcast_5m_jepa": {
+      "label": "RetCast-JEPA 5M",
+      "params": 5105304,
+      "checkpoint_mb": 20.04,
+      "batch_latency_ms": 32.17,
+      "series_per_sec": 497.4,
+      "peak_vram_mb": 36.74
+    },
+    "retcast_9m_jepa": {
+      "label": "RetCast-JEPA 9M",
+      "params": 9187292,
+      "checkpoint_mb": 35.9,
+      "batch_latency_ms": 50.31,
+      "series_per_sec": 318.03,
+      "peak_vram_mb": 55.31
+    },
+    "ablation_2m_transformer": {
+      "label": "Transformer-JEPA 2M",
+      "params": 2049604,
+      "checkpoint_mb": 8.1,
+      "batch_latency_ms": 13.95,
+      "series_per_sec": 1147.13,
+      "peak_vram_mb": 21.36
+    }
+  },
+  "context_scaling": {
+    "retnet2_chunkwise": {
+      "label": "RetCast-JEPA 2M (chunkwise)",
+      "rows": [
+        {
+          "context_len": 512,
+          "num_patches": 32,
+          "latency_ms": 17.52,
+          "peak_vram_mb": 18.74,
+          "state_kb": 830.0,
+          "oom": false
+        },
+        {
+          "context_len": 1024,
+          "num_patches": 64,
+          "latency_ms": 22.07,
+          "peak_vram_mb": 20.42,
+          "state_kb": 830.0,
+          "oom": false
+        },
+        {
+          "context_len": 2048,
+          "num_patches": 128,
+          "latency_ms": 30.27,
+          "peak_vram_mb": 23.74,
+          "state_kb": 830.0,
+          "oom": false
+        },
+        {
+          "context_len": 4096,
+          "num_patches": 256,
+          "latency_ms": 49.03,
+          "peak_vram_mb": 31.03,
+          "state_kb": 830.0,
+          "oom": false
+        },
+        {
+          "context_len": 8192,
+          "num_patches": 512,
+          "latency_ms": 86.9,
+          "peak_vram_mb": 44.34,
+          "state_kb": 830.0,
+          "oom": false
+        },
+        {
+          "context_len": 16384,
+          "num_patches": 1024,
+          "latency_ms": 173.18,
+          "peak_vram_mb": 71.01,
+          "state_kb": 830.0,
+          "oom": false
+        }
+      ]
+    },
+    "retnet2_parallel": {
+      "label": "RetCast-JEPA 2M (parallel)",
+      "rows": [
+        {
+          "context_len": 512,
+          "num_patches": 32,
+          "latency_ms": 15.42,
+          "peak_vram_mb": 17.7,
+          "state_kb": 830.0,
+          "oom": false
+        },
+        {
+          "context_len": 1024,
+          "num_patches": 64,
+          "latency_ms": 22.25,
+          "peak_vram_mb": 19.34,
+          "state_kb": 830.0,
+          "oom": false
+        },
+        {
+          "context_len": 2048,
+          "num_patches": 128,
+          "latency_ms": 21.34,
+          "peak_vram_mb": 24.06,
+          "state_kb": 830.0,
+          "oom": false
+        },
+        {
+          "context_len": 4096,
+          "num_patches": 256,
+          "latency_ms": 57.22,
+          "peak_vram_mb": 39.48,
+          "state_kb": 830.0,
+          "oom": false
+        },
+        {
+          "context_len": 8192,
+          "num_patches": 512,
+          "latency_ms": 169.19,
+          "peak_vram_mb": 87.8,
+          "state_kb": 830.0,
+          "oom": false
+        },
+        {
+          "context_len": 16384,
+          "num_patches": 1024,
+          "latency_ms": 539.85,
+          "peak_vram_mb": 266.71,
+          "state_kb": 830.0,
+          "oom": false
+        }
+      ]
+    },
+    "transformer_kv": {
+      "label": "Transformer-JEPA 2M (KV cache)",
+      "rows": [
+        {
+          "context_len": 512,
+          "num_patches": 32,
+          "latency_ms": 10.96,
+          "peak_vram_mb": 17.54,
+          "state_kb": 990.0,
+          "oom": false
+        },
+        {
+          "context_len": 1024,
+          "num_patches": 64,
+          "latency_ms": 11.24,
+          "peak_vram_mb": 18.93,
+          "state_kb": 1950.0,
+          "oom": false
+        },
+        {
+          "context_len": 2048,
+          "num_patches": 128,
+          "latency_ms": 15.74,
+          "peak_vram_mb": 22.14,
+          "state_kb": 3870.0,
+          "oom": false
+        },
+        {
+          "context_len": 4096,
+          "num_patches": 256,
+          "latency_ms": 38.96,
+          "peak_vram_mb": 33.03,
+          "state_kb": 7710.0,
+          "oom": false
+        },
+        {
+          "context_len": 8192,
+          "num_patches": 512,
+          "latency_ms": 106.96,
+          "peak_vram_mb": 67.56,
+          "state_kb": 15390.0,
+          "oom": false
+        },
+        {
+          "context_len": 16384,
+          "num_patches": 1024,
+          "latency_ms": 320.49,
+          "peak_vram_mb": 193.47,
+          "state_kb": 30750.0,
+          "oom": false
+        }
+      ]
+    }
+  }
+}
